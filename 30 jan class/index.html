@@ -7,35 +7,37 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <div id="search-bar">
-            <input type="text" id="location" placeholder="Enter Location" style="background-color: slategray;"/>
-            <button  id="btn"style="background-color: white;">search</button>
-        </div>
-    </header>
-    <main>
-     <div id="main-content">
-         <div id="tempetarure">
-             <p>123 °C</p>
-         </div>
-         <div id="place-date-time">
-             <div class="place">Delhi</div>
-             <div class="date-day-time">
-                 <span class="time">9:15</span>
-                 <span class="day">Friday</span>
-                 <span class="date">2026-01-30</span>
-             </div>
-         </div>
-         <div id="weather-condition">
-             <div class="icon"> 
-                 <img src="//cdn.weatherapi.com/weather/64x64/night/143.png"
-               alt="weather-status-icon"
-              />
-             </div>
-             <div class="condition">Sunny</div>
-          </div>  
-      </div>
-    </main>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">Weather Now</h1>
+            <div id="search-bar">
+                <input type="text" id="location" placeholder="Enter Location" />
+                <button id="btn">Search</button>
+            </div>
+        </header>
+        <main>
+            <section id="main-content">
+                <div id="temperature" class="temperature">
+                    <span>123 °C</span>
+                </div>
+                <div id="place-date-time">
+                    <div class="place">Delhi</div>
+                    <div class="date-day-time">
+                        <span class="time">9:15</span>
+                        <span class="day">Friday</span>
+                        <span class="date">2026-01-30</span>
+                    </div>
+                </div>
+                <div id="condition">
+                    <img class="icon" src="//cdn.weatherapi.com/weather/64x64/night/143.png" alt="weather-status-icon" />
+                    <div class="condition">Sunny</div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p> Vedam Weather Now &copy; 2026</p>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

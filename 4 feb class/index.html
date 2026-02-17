@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="./style.css">
+ 
+</head>
+<body>
+   <header> 
+    <h1>Event Flow Playground</h1>
+    <h3>Demonstrating Capturing , Bubbling & Propogation control</h3>
+   </header>
+   <div id="main">
+     <div id="container">
+      <div id="grandparent">
+          <p>Grandparent Div</p>
+          <div id="parent">
+              <p>Parent Div</p>
+              <div id="child">
+                  <button id="btn">Click Me</button>
+             </div>
+          </div>
+      </div>
+     
+     </div>
+        <div id="log-box">
+            <h3>Event Log</h3>
+            <div id="log-content">
+                <div id="text">Grandparent-Capturing</div>
+                <div id="text">Parent-Capturing</div>
+                <div id="text">Parent-Bubbling</div>
+                <div id="text">Grandparent-Bubbling</div>
+                <div id="text">Grandparent-Capturing</div>
+                <div id="text">Parent-Capturing</div>
+                <div id="text">Parent-Bubbling</div>
+                <div id="text">Grandparent-Bubbling</div>
+                <br>
+                <div id="fixtext">Capturing->Target->Bubbling<br>
+                    stoppropagation blocks parents<br>
+                    stopImmediatePropagation blocks parents and siblings
+                </div>
+            </div>
+    </div>
+
+    </div>
+    <script src=script.js></script>
+</body>
+</html>

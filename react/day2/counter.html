@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  
+        }
+      #outer {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        height : 420px;
+        width: 320px;
+        border: black, solid, 2px;
+        background-color: rgb(177, 215, 233); 
+        flex-direction: column; 
+        justify-content: space-between;
+        padding: 20px; 
+     
+      }
+      #score {
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(0, 0, 10);
+        align-self: center;
+      }
+      #num{
+        font-size: 100px;
+        font-weight: bold;
+        color: rgb(0, 0, 10);
+        text-align: center;
+        margin: 0;
+      }
+         button{
+          font-size: 15px;
+          font-weight: bold;
+          color: rgb(0, 0, 10);
+          align-self: flex end;
+          padding: 10px 20px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+        }
+         button:hover{
+          background-color: rgb(0, 0, 10);
+          color: white;
+        }
+         #heading{
+          font-size: 30px;
+          font-weight: bold;
+          color: rgb(0, 0, 10);
+          align-self: flex-start;
+        }
+            #buttons{
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+             justify-content: space-between;
+             
+            }
+
+    </style>
+    <title>Document</title>
+  </head>
+  <body><div id="root"></div>
+    
+    <script type="text/babel">
+         const make = React.createElement;
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+       let count=0;
+    //   function render() {
+    //     root.render(
+    //       make("div", { id: "outer" },
+    //         make("h1", { id: "heading" }, "Counter App"),
+    //         make("p", { id: "num" }, count),
+    //         make("div", { id: "buttons" },
+    //           make("button", { onClick: () => { count++; render(); } }, "+"),
+    //           make("button", { onClick: () => { count=0; render(); } }, "Reset"),
+    //           make("button", { onClick: () => { count--; render(); } }, "-")
+    //         )
+    //       )
+    //     );
+    //     }
+    //     render();
+    function Counter() {
+      const [count, setCount] = React.useState(0);
+      return (
+        <div id="outer">
+          <h1 id="heading">Counter App</h1>
+          <p id="num">{count}</p>
+          <div id="buttons">
+            <button onClick={() => setCount(count + 1)}>+</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+            <button onClick={() => setCount( count > 0 ? count-1  : count)}>-</button>
+            
+          </div>
+        </div>
+      );
+    }
+    root.render(<Counter />);
+    </script>
+  </body>
+</html>

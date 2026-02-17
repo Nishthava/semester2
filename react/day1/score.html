@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  
+        }
+      #outer {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        height : 600px;
+        width: 400px;
+        border: black, solid, 2px;
+        background-color: pink;   
+     
+      }
+      #score {
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(0, 0, 10);
+        align-self: flex-start;
+      }
+      #inner{
+        background-color: lightblue;
+        height:80px;
+        width:80px;
+        border : black, solid, 2px;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body><div id="root"></div>
+    
+    <script type="text/babel">
+      function Clickgame() {
+        const [score, setScore] = React.useState(0);
+          const [position, setPosition] = React.useState({x:0, y:0});
+        const handleclick=(e)=>{ 
+          const x = Math.floor(Math.random() * 320);
+          const y = Math.floor(Math.random() * 250);
+          setPosition({ x, y });
+          setScore(prev => prev + 1);
+  }
+          return (
+  <div id="outer">
+    <h3>Score: {score}</h3>
+
+<div id="inner" onClick={handleclick} style={{
+    left: position.x,
+    top: position.y
+  }}></div>
+
+  </div>
+);
+
+      
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Clickgame />);
+
+    </script>
+  </body>
+</html>
