@@ -1,0 +1,130 @@
+/* Table styles for task list */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+.task-table th, .task-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.task-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+.task-table td {
+  vertical-align: middle;
+}
+.task-table button {
+  min-width: 110px;
+  margin: 0 4px;
+  background: #28a745;
+  color: #fff;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.task-table .delete-task {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.task-table .delete-task:hover {
+  background: #b02a37;
+}
+.task-table button.completed {
+  background: #ffc107;
+  color: #fff;
+}
+/* Task Filter App Styles */
+.task-filter-app {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.task-filter-app h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color:black
+}
+
+.task-filter-app .filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.task-filter-app .filter-buttons button {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.task-filter-app .filter-buttons button.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.task-filter-app ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-filter-app li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task-filter-app li span {
+  text-decoration: none;
+  color: #222;
+}
+
+.task-filter-app li span.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-filter-app li button {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task-filter-app li button.completed {
+  background: #095c08;
+  color: #fff;
+}
+
+.task-filter-app .no-tasks {
+  text-align: center;
+  color: #888;
+}
